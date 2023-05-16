@@ -2,7 +2,11 @@
 
 This repository contains code for the modelling part of the ["A Sustainable West? Analyzing Clusters of Public Opinion in Sustainability Western Discourses in a Collection of Multilingual Newspapers (1999-2018)"](https://doi.org/10.5281/zenodo.7742461) paper.
 
+## Content
 It includes code for the *Topic Modelling*, *Topic Clustering* and *Topic Evolution*.
+
+1. `pachinko_model.ipynb` uses the Pachinko Allocation model to find topics in a set of documents (it also contains information on the finetuning of parameters and sentiment analysis,
+2. `topic_similarity.ipynb` analyzes the relationships between the topics of different corpora (that were identified by PA model, you can apply same pipeline to other Topic Modelling Models) - topic similarity, topic clustering, topic evolution and sentiment analysis. 
                    
                   
 
