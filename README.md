@@ -12,7 +12,7 @@ It includes code for the *Topic Modelling*, *Topic Clustering* and *Topic Evolut
 
 ## How to cite 
 **Zenodo Preprint**
-```
+```bibtex
 @article{fernandez2023sustainable,
   author       = {Elena Fernández Fernández and
                   Germans Savcisens},
