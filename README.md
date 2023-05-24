@@ -12,13 +12,10 @@ It includes code for the *Topic Modelling*, *Topic Clustering* and *Topic Evolut
 
 ## How to cite 
 **Zenodo Preprint**
-```
+```bibtex
 @article{fernandez2023sustainable,
-  author       = {Elena Fernández Fernández and
-                  Germans Savcisens},
-  title        = {{"A Sustainable West? Analyzing Clusters of Public 
-                   Opinion in Sustainability Western Discourses in a
-                   Collection of Multilingual Newspapers (1999-2018)"}},
+  author       = {Elena Fernández Fernández and Germans Savcisens},
+  title        = {{"A Sustainable West? Analyzing Clusters of Public Opinion in Sustainability Western Discourses in a Collection of Multilingual Newspapers (1999-2018)"}},
   month        = mar,
   year         = 2023,
   publisher    = {Zenodo},
