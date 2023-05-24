@@ -1,9 +1,6 @@
 from typing import List
 import tomotopy as tp
-import pandas as pd
 from sklearn.base import BaseEstimator
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
 from joblib import Parallel, delayed
 
 
@@ -110,32 +107,4 @@ class TopicWrapper(BaseEstimator):
         return super().set_params(**params)
 
 
-#### Sentiment Analyser (Multilingual)
-class SentimentAnalyser():
-    def __init__(self, lang, path = "sentiments/") -> None:
-        self.lang = lang
-        self.path = path
-        self.load_lang()
-        self.fit()
-        print("Sentiment Analyser is fit for %s" %self.lang.upper())
-    def load_lang(self):
-        neg = pd.read_csv(self.path + "negative_words_%s.txt" %self.lang)
-        neg = neg.rename(columns={neg.columns[0]: "word"})
-        neg['polarity'] = 0
-        self.neg = neg.copy()
-        pos = pd.read_csv(self.path + "positive_words_%s.txt" %self.lang)
-        pos = pos.rename(columns={pos.columns[0]: "word"})
-        pos['polarity'] = 1
-        self.pos = pos.copy()
-        self.s = pd.concat([self.pos, self.neg], ignore_index=True).set_index("word")
-    def fit(self):
-        self.vectorizer = CountVectorizer()
-        words = self.vectorizer.fit_transform([k for k in self.s["polarity"].keys()])
-        self.model = LogisticRegression().fit(words, [v for v in self.s["polarity"].values])
-    def get_sentiment(self, x: list):
-        """
-        Predict for single sentence/document
-        """
-        assert len(x) == 1
-        return self.model.predict_proba(self.vectorizer.transform(x)).flatten()[1]
         
